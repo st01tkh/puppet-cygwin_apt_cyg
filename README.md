@@ -37,7 +37,7 @@ include cygwin_apt_cyg
 
 ### Setup Requirements **OPTIONAL**
 
-Puppet modules requiered: 
+Puppet modules required: 
 * voxpupuli-puppet-download_url
 * puppetslab-stdlib
 
