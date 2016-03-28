@@ -1,0 +1,15 @@
+{
+  "name": "tkh-cygwin_apt_cyg",
+  "version": "0.0.1",
+  "author": "st01tkh",
+  "summary": "Setup apt-cyg - apt-like CygWin package manager",
+  "license": "Apache 2.0",
+  "source": "https://github.com/st01tkh/puppet-cygwin_apt_cyg.git",
+  "project_page": "https://github.com/st01tkh/puppet-cygwin_apt_cyg.git",
+  "issues_url": "https://github.com/st01tkh/puppet-cygwin_apt_cyg.git",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"voxpupuli-puppet-download_file","version_requirement":">= 1.0.0"}
+  ]
+}
+
