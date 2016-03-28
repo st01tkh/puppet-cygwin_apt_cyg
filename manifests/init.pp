@@ -20,7 +20,7 @@
 #
 class cygwin_apt_cyg {
   if ($operatingsystem == 'windows') {
-     $cygwinroot = get_cygwin_root()
+      $cygwinroot = get_cygwin_root()
       if ($cygwinroot) {
           $sysroot = env("SYSTEMROOT")
           $sys32 = file_join_win(["${sysroot}", "System32"])
@@ -34,7 +34,7 @@ class cygwin_apt_cyg {
               destination_directory => "${cygwinroot}\\vendor\\apt-cyg",
           } ->
           exec {'create_apt-cyg_symlink':
-            path => ["$sysroot", "$sys32", "${choco_bin}", "${cygwin_bin}", ],
+            path => ["$sysroot", "$sys32", "${cygwin_bin}", ],
             cwd => "${cygwin_bin}",
             command => 'bash.exe -c "[ -L /usr/local/bin/apt-get ] && ln -sf /usr/local/bin/apt-get && rm /usr/local/bin/apt-get; ln -s /vendor/apt-cyg/apt-cyg /usr/local/bin/apt-cyg; exit 0"',
           }
