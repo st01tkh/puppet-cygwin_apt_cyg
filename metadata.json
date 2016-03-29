@@ -9,7 +9,7 @@
   "issues_url": "https://github.com/st01tkh/puppet-cygwin_apt_cyg.git",
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
-    {"name":"voxpupuli-puppet-download_file","version_requirement":">= 1.0.0"}
+    {"name":"puppet-download_file","version_requirement":">= 1.0.0"}
   ]
 }
 
