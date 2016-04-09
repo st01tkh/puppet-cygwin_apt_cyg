@@ -27,11 +27,11 @@ class cygwin_apt_cyg {
           $cygwin_vendor = file_join_win(["${cygwinroot}", "vendor"])
           $cygwin_aptcyg = file_join_win(["${cygwin_vendor}", "apt-cyg"])
           $cygwin_bin = file_join_win(["${cygwinroot}", "bin"])
-          file {"${cygwin_vendor}": ensure => 'directory' } ->
+          class {"cygwin_common::vendor": } ->
           file {"${cygwin_aptcyg}": ensure => 'directory' } ->
           download_file {"download apt-cyg" :
               url => 'https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg',
-              destination_directory => "${cygwinroot}\\vendor\\apt-cyg",
+              destination_directory => "${cygwin_vendor}\\apt-cyg",
           } ->
           exec {'create_apt-cyg_symlink':
             path => ["$sysroot", "$sys32", "${cygwin_bin}", ],
