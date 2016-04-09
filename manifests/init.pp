@@ -27,7 +27,6 @@ class cygwin_apt_cyg {
           $cygwin_vendor = file_join_win(["${cygwinroot}", "vendor"])
           $cygwin_aptcyg = file_join_win(["${cygwin_vendor}", "apt-cyg"])
           $cygwin_bin = file_join_win(["${cygwinroot}", "bin"])
-          class {"cygwin_common": } ->
           file {"${cygwin_aptcyg}": ensure => 'directory' } ->
           download_file {"download apt-cyg" :
               url => 'https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg',
