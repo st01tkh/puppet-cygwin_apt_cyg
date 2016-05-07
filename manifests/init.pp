@@ -36,6 +36,11 @@ class cygwin_apt_cyg {
             path => ["$sysroot", "$sys32", "${cygwin_bin}", ],
             cwd => "${cygwin_bin}",
             command => 'bash.exe -c "[ -L /usr/local/bin/apt-cyg ] && ln -sf /usr/local/bin/apt-cyg && rm /usr/local/bin/apt-get; ln -s /vendor/apt-cyg/apt-cyg /usr/local/bin/apt-cyg; ln -s /usr/bin/gawk /bin/awk; exit 0"',
+          } ->
+          exec {'update_apt-cyg_database':
+            path => ["$sysroot", "$sys32", "${cygwin_bin}", ],
+            cwd => "${cygwin_bin}",
+            command => 'bash.exe -c "/usr/local/bin/apt-cyg update"',
           }
       } else {
           notify {"cygwin root does not exist": }
